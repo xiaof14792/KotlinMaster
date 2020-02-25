@@ -1,4 +1,4 @@
-package org.kotlinmaster
+package org.kotlinmaster.one
 
 class User {
     var name: String? = null //可空类型

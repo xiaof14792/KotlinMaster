@@ -1,4 +1,4 @@
-package org.kotlinmaster
+package org.kotlinmaster.one
 
 import android.app.Activity
 import android.os.Bundle

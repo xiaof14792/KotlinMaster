@@ -1,11 +1,10 @@
-package org.kotlinmaster
+package org.kotlinmaster.one
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.Nullable
-import java.lang.StringBuilder
+import org.kotlinmaster.R
 
 open class MainActivity : AppCompatActivity() {
 

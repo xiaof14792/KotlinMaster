@@ -1,8 +1,9 @@
-package org.kotlinmaster
+package org.kotlinmaster.one
 
 import android.os.Bundle
 
-class Main2Activity private constructor(name: String): MainActivity(), Impl {
+class Main2Activity private constructor(name: String): MainActivity(),
+    Impl {
     //Java 里面 @Override 是注解的形式。
     //Kotlin 里的 override 变成了关键字。
     //Kotlin 省略了 protected 关键字，也就是说，Kotlin 里的 override 函数的可见性是继承自父类的
