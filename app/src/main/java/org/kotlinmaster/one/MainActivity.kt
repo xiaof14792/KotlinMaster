@@ -1,5 +1,6 @@
 package org.kotlinmaster.one
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,9 @@ import android.util.Log
 import android.view.View
 import org.kotlinmaster.R
 import org.kotlinmaster.two.A
+import org.kotlinmaster.two.Kotlin
+import org.kotlinmaster.two.UserActivity
+import org.kotlinmaster.two.test
 
 open class MainActivity : AppCompatActivity() {
 
@@ -17,7 +21,7 @@ open class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        var view: View? = null //可空类型
+        var view: View? //可空类型
         view = findViewById(R.id.view_content)
         view?.setBackgroundColor(Color.RED) //safe call
 
@@ -112,9 +116,13 @@ open class MainActivity : AppCompatActivity() {
         Log.d("--", "A.d" + A.d)
 
 
-    }
-
-    open fun test() {
+        org.kotlinmaster.two.test()
 
     }
+
+
+    open fun test(){
+
+    }
+
 }

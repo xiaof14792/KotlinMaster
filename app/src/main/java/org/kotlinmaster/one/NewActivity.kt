@@ -31,6 +31,5 @@ class NewActivity : MainActivity() {
 
     //只能修改父类方法的遗传性，即是否可
     final override fun test(){
-
     }
 }
