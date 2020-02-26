@@ -3,8 +3,10 @@ package org.kotlinmaster.one
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import org.kotlinmaster.R
+import org.kotlinmaster.two.A
 
 open class MainActivity : AppCompatActivity() {
 
@@ -105,9 +107,14 @@ open class MainActivity : AppCompatActivity() {
          * 类型的判断和强转
          */
 
+
+        println("--------------------------------")
+        Log.d("--", "A.d" + A.d)
+
+
     }
 
-    open fun test(){
+    open fun test() {
 
     }
 }
