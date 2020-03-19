@@ -105,4 +105,8 @@ class Person(val name: String, val id: Int) {
     }
     //其中用到了 lambda 表达式以及 Kotlin 内置的 require 函数
 
+
+
+
+
 }
