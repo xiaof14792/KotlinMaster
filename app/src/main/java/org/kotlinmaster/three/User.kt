@@ -8,9 +8,9 @@ package org.kotlinmaster.three
 
 
 class User {
-    var name: String
+    var name: String?
 
-    constructor(name: String){
+    constructor(name: String?){
         this.name = name
     }
 }
