@@ -1,4 +1,4 @@
-package org.kotlinmaster.courtines
+package org.kotlinmaster.courtines.basis
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
