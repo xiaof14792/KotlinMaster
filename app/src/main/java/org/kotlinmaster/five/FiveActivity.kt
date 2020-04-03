@@ -28,16 +28,20 @@ class FiveActivity: AppCompatActivity(), CoroutineScope {
         //开启协程并打印当前线程名
         val coroutineScope = CoroutineScope(coroutineContext)
         coroutineScope.launch {
-            println("--当前线程名：${Thread.currentThread().name}" )
+            println("--当前线程名-1：${Thread.currentThread().name}" )
         }
 
 
         launch(Dispatchers.IO) {
-            println("--当前线程名：${Thread.currentThread().name}" )
+            println("--当前线程名-2：${Thread.currentThread().name}" )
         }
 
         val imageUrl = "https://himg2.huanqiucdn.cn/attachment2010/2020/0321/20200321071950687.jpg"
-        loadData(imageUrl)
+        launch {
+            println("--加载图片的线程：${Thread.currentThread().name}" )
+            loadImage(imageUrl)
+        }
+
 
     }
 
@@ -61,6 +65,24 @@ class FiveActivity: AppCompatActivity(), CoroutineScope {
         launch(Dispatchers.Main) {
             imageView.setImageBitmap(bitmap)
         }
+
+    }
+
+    suspend fun loadImage(imageUrl: String){
+        var bitmap: Bitmap? = null;
+
+        withContext(Dispatchers.IO){
+            val url = URL(imageUrl)
+            val conn = url.openConnection()
+            conn.doInput = true
+            conn.connect()
+
+            val inputStream = conn.getInputStream()
+            bitmap = BitmapFactory.decodeStream(inputStream)
+            inputStream.close()
+        }
+
+        imageView.setImageBitmap(bitmap)
     }
 
 

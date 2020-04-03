@@ -1,2 +1,2 @@
-include ':app', ':coroutinesdemo'
+include ':app', ':coroutines_demo', ':official_practice'
 rootProject.name='KotlinMaster'
