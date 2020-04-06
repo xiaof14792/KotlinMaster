@@ -11,7 +11,7 @@ fun main() = runBlocking {
     val job = launch(Dispatchers.Default) {
         var nextPrintTime = startTime
         val i = 0
-        while (i < 5) { //computation loop, just waste CPU
+        while (i < 5) { //computation loop, just waste CPU，一直在执行计算任务
             if (System.currentTimeMillis() >= nextPrintTime) {
                 println("job: i am sleeping $i++")
                 nextPrintTime += 500

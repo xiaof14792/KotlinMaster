@@ -11,6 +11,7 @@ import kotlinx.coroutines.runBlocking
 fun main() = runBlocking {
     val job = launch {
         try {
+            //action执行1000次
             repeat(1000){i ->
                 println("job: i am sleeping $i")
                 delay(500)

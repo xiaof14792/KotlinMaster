@@ -12,5 +12,5 @@ interface ApiService {
 
     @FormUrlEncoded
     @POST("/user/login")
-    fun login(@Field("username") username: String, @Field("password") password: String): Deferred<WeakResponse<User>>
+    fun login(@Field("username") username: String, @Field("password") password: String): Deferred<WrapperResponse<User>>
 }

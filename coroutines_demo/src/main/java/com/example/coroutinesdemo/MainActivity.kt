@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         GlobalScope.launch(Dispatchers.IO) {
             val repository = ApiRepository()
 
-            var result: WeakResponse<User>? = null
+            var result: WrapperResponse<User>? = null
             result = repository.login(
                 editUsername.text.trimEnd().toString(),
                 editPassword.text.trimEnd().toString()
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //通过launch函数开启一个协程
         GlobalScope.launch(Dispatchers.Main) {
             val repository = ApiRepository()
-            var result: WeakResponse<User>? = null
+            var result: WrapperResponse<User>? = null
 
             //withContext。这个函数可以切换到指定的线程，并在闭包内的逻辑执行结束之后，自动把线程切回去继续执行
             withContext(Dispatchers.IO) {
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     //既然不需要嵌套了，那就可以把io线程的操作，拿出来单独作为函数
-    suspend fun login(name: String, password: String): WeakResponse<User> {
+    suspend fun login(name: String, password: String): WrapperResponse<User> {
         return withContext(Dispatchers.IO){
             val repository = ApiRepository()
             repository.login(name, password).await()

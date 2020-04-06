@@ -2,7 +2,6 @@ package com.example.coroutinesdemo
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -16,7 +15,7 @@ class ApiRepository {
         .create(ApiService::class.java)
 
 
-    fun login(name: String, password: String): Deferred<WeakResponse<User>>{
+    fun login(name: String, password: String): Deferred<WrapperResponse<User>>{
         return retrofit.login(name, password)
     }
 
