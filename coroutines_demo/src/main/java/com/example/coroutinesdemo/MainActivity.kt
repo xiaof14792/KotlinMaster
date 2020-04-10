@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        login_three()
+        login_two()
     }
 
     fun login_one() {
